@@ -55,8 +55,7 @@ cursor.close()
 conn.close()
 #
 f=BACKUP_PATH+'backup.log'
-with open(f, 'aw+') as fin
-#fin = open(f, 'aw+')
+fin = open(f, 'aw+')
 for dbname in databases:
     print >>fin,"%s start backup database %s"%(STIME1,dbname)
     os.chdir(MYSQL_BIN_PATH)
@@ -72,6 +71,7 @@ for dbname in databases:
         print >> fin, "%s error backup database %s" % (STIME1, dbname)
     fin1.close()
 print  "finish"
+fin.close()
 if os.path.exists(my):
   os.remove(my)
 shutil.copy(my1,my)

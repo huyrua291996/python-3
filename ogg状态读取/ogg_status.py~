@@ -47,10 +47,10 @@ name3 = name2.split("\n\n")[0]
 name4 = name3.split()
 list1 = []
 lenth = len(name4)
-list1 = [name4[i] for i in range(lenth) if i % 5 == 1 or i % 5 == 2]
-#for i in range(lenth):
-#  if i%5 == 1 or i%5 == 2:
-#    list1.append(name4[i])
+
+for i in range(lenth):
+  if i%5 == 1 or i%5 == 2:
+    list1.append(name4[i])
 #####
 f7 = path3+'ogg_status.log'
 fin = open(f7,'aw+')
